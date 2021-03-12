@@ -1,0 +1,158 @@
+/* devel input page style */
+
+.webdevelInput {
+  width: 100%;
+  height: auto;
+  border: 1px solid #54aeb7;
+  padding: 10px;
+}
+
+.webdevelInput .titleSer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.webdevelInput .titleSer p {
+  width: 33.33%;
+  _float: left;
+}
+
+.webdevelInput .titleSer p.client_input {
+  _float: right;
+}
+
+.webdevelInput .titleSer p label {
+  background: #54aeb7;
+  color: #fff;
+  padding: 10.5px 20px;
+  display: block;
+  width: 30%;
+  text-align: center;
+  float: left;
+}
+
+.webdevelInput .titleSer p input {
+  width: 70%;
+  border: 1px solid #54aeb7;
+  padding: 10px;
+  float: left;
+}
+
+.webdevelInput .uploadDesc textarea {
+  width: 100%;
+  height: 200px;
+  border: 1px solid #54aeb7;
+  margin-top: 10px;
+  resize: none;
+  padding: 10px;
+}
+
+.webdevelInput .uploadImgs {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.webdevelInput .uploadImgs .uploadBox {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.webdevelInput .uploadImgs .uploadBox:nth-child(2) {
+  margin: 0 2px;
+}
+
+.webdevelInput .uploadImgs .uploadBox.appImg {
+  width: 100%;
+}
+
+.webdevelInput .uploadImgs .uploadBox.appImg:last-child {
+  margin-right: 0;
+}
+
+.webdevelInput .uploadBox .inputControll {
+  text-align: center;
+}
+
+.webdevelInput .inputControll input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1;
+  overflow: hidden;
+}
+
+.webdevelInput .inputControll label {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+  text-align: center;
+  border: 1px solid #54aeb7;
+  color: #fff;
+  background: #54aeb7;
+  transition: all 0.3s;
+}
+
+.webdevelInput .inputControll label:hover {
+  color: black;
+}
+
+.webdevelInput .uploadName {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #54aeb7;
+  color: #54aeb7;
+  margin-bottom: 10px;
+}
+
+.webdevelInput .imgWrap {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  border: 1px solid #54aeb7;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.webdevelInput .imgWrap img {
+  width: 100%;
+}
+
+/* buttons style */
+.btns {
+  display: flex;
+  width: auto;
+  height: auto;
+  margin: 0;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.btns .commonBtn {
+  margin-right: 1px;
+}
+
+.btns .commonBtn:hover {
+  background: #54aeb7;
+  color: #fff;
+}
+
+/* web input page style */
+.webInputForm .titleSer {
+  flex-wrap: wrap;
+}
+
+.webInputForm .titleSer p {
+  width: 50%;
+}
+
+.webInputForm .titleSer p:nth-child(1),
+.webInputForm .titleSer p:nth-child(2) {
+  margin-bottom: 10px;
+}
