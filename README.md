@@ -35,4 +35,5 @@ http://uhj1993.dothome.co.kr/db-portfolio/
 - [MariaDB]
 
 ## WIKI
-[설계](https://github.com/uhj1993/DB_Portfolio/wiki#)
+웹 개발의 과정이 궁금하신가요? 아래 위키를 참조해보세요.
+[WIKI](https://github.com/uhj1993/DB_Portfolio/wiki#)
