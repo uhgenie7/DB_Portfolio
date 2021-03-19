@@ -65,7 +65,7 @@ function scrollEvent() {
   if (window.scrollY > headerHeight / 2) {
     contentTop.classList.add("show");
   } else {
-    contentTop.classList.remove("show")
+    contentTop.classList.remove("show");
   }
 }
 

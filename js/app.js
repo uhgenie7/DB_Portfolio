@@ -1,44 +1,44 @@
-$(function(){
+$(function () {
   let count = 4;
   let addData = 0;
   let allData = [];
 
-  $('.appBoxes').masonry({
+  $(".appBoxes").masonry({
     // options
-    itemSelector: '.appBox',
-    columnWidth: '.appBox-sizer',
-    percentPosition: true
+    itemSelector: ".appBox",
+    columnWidth: ".appBox-sizer",
+    percentPosition: true,
   });
-  $.getJSON("/gold/data/json/app.json", initAppData);
+  $.getJSON("/db-portfolio/data/json/app.json", initAppData);
 
-  function initAppData(data){
-    allData=data;
+  function initAppData(data) {
+    allData = data;
     addAppData();
 
     $(".appLoadMore").on("click", addAppData);
   }
 
-  function addAppData(){
+  function addAppData() {
     // e.preventDefault();
     // console.log(data[0].appclient);
-    let items=[];
+    let items = [];
     let slicedData = allData.slice(addData, addData + count);
-    $.each(slicedData, function(i, item){
-      let itemHTML=`<div class="appBox">
+    $.each(slicedData, function (i, item) {
+      let itemHTML = `<div class="appBox">
                       <div>
-                        <img src="/gold/data/app_page/app_thumb/${item.appthumb}" alt="">
+                        <img src="/db-portfolio/data/app_page/app_thumb/${item.appthumb}" alt="">
                         <h2>${item.apptitle}</h2>
-                        <a href="/gold/pages/app/app_detail.php?num=${item.appnum}">VIEW DETAIL</a>
+                        <a href="/db-portfolio/pages/app/app_detail.php?num=${item.appnum}">VIEW DETAIL</a>
                       </div>
                     </div>`;
-                  items.push($(itemHTML).get(0));
+      items.push($(itemHTML).get(0));
     });
     $(".appBoxes").append(items);
-    $(".appBoxes").imagesLoaded(function(){
+    $(".appBoxes").imagesLoaded(function () {
       // $(items).removeClass("is-loading");
-      $(".appBoxes").masonry('appended', items);
+      $(".appBoxes").masonry("appended", items);
     });
 
-    addData+=slicedData.length;
+    addData += slicedData.length;
   }
 });
