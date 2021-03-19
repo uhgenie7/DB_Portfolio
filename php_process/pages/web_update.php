@@ -1,3 +1,4 @@
+<meta charset="UTF-8" />
 <?php
     $web_update_num=$_GET['num'];
     $web_title = nl2br($_REQUEST['web_title']);
@@ -10,9 +11,9 @@
     $regist_day = date("Y-m-d");
 
     // web page image upload directory
-    $img_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/gold/data/web_page/pc/';
-    $mobile_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/gold/data/web_page/mobile/';
-    $thumb_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/gold/data/web_page/thumb/';
+    $img_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/db-portfolio/data/web_page/pc/';
+    $mobile_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/db-portfolio/data/web_page/mobile/';
+    $thumb_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/db-portfolio/data/web_page/thumb/';
 
     //main image
     $main_name = $_FILES['main']['name'];
@@ -89,15 +90,15 @@
     }
 
     //database connect
-    include $_SERVER['DOCUMENT_ROOT'].'/gold/php_process/connect/db_connect.php';
+    include $_SERVER['DOCUMENT_ROOT'].'/db-portfolio/php_process/connect/db_connect.php';
 
-    $sql="update gold_web set GOLD_WEB_tit='$web_title', GOLD_WEB_ser='$web_serial', GOLD_WEB_des='$web_desc', GOLD_WEB_img='$main_name', GOLD_WEB_mo='$mobile_name', GOLD_WEB_thumb='$thumbnail_name', GOLD_WEB_cli='$web_client', GOLD_WEB_reg='$regist_day', GOLD_WEB_dom='$web_domain' where GOLD_WEB_num='$web_update_num'";
+    $sql="update portfolio_web set PORTFOLIO_WEB_tit='$web_title', PORTFOLIO_WEB_ser='$web_serial', PORTFOLIO_WEB_des='$web_desc', PORTFOLIO_WEB_img='$main_name', PORTFOLIO_WEB_mo='$mobile_name', PORTFOLIO_WEB_thumb='$thumbnail_name', PORTFOLIO_WEB_cli='$web_client', PORTFOLIO_WEB_reg='$regist_day', PORTFOLIO_WEB_dom='$web_domain' where PORTFOLIO_WEB_num='$web_update_num'";
     
     mysqli_query($dbConn, $sql);
 
     echo "
     <script>
-      location.href='/gold/pages/web/web.php';
+      location.href='/db-portfolio/pages/web/web.php';
     </script>
     ";
 ?>

@@ -1,9 +1,10 @@
+<meta charset="UTF-8" />
 <?php
   $rep_ans_num=$_GET['num'];
 
   // database connect
-  include $_SERVER['DOCUMENT_ROOT'].'/gold/php_process/connect/db_connect.php';
-  $sql="delete from gold_ans where GOLD_ANS_num=$rep_ans_num";
+  include $_SERVER['DOCUMENT_ROOT'].'/db-portfolio/php_process/connect/db_connect.php';
+  $sql="delete from portfolio_ans where PORTFOLIO_ANS_num=$rep_ans_num";
   mysqli_query($dbConn, $sql);
 
   echo "

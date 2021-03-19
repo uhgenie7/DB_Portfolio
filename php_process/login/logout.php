@@ -6,7 +6,7 @@
 
   echo "
     <script>
-      location.href='/gold/index.php';
+      location.href='/db-portfolio/index.php';
     </script>
   "
 ?>

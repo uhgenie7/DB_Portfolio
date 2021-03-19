@@ -1,3 +1,4 @@
+<meta charset="UTF-8" />
 <?php
  $msg_name = $_POST['msgName'];
  $msg_email = $_POST['msgEmail'];
@@ -9,13 +10,13 @@
 
  echo $msg_name, $msg_email, $msg_title, $msg_txt, $regist_day;
 
- include $_SERVER['DOCUMENT_ROOT'].'/gold/php_process/connect/db_connect.php';
-  $sql="insert into gold_msg(
-    GOLD_MSG_name,
-    GOLD_MSG_email,
-    GOLD_MSG_tit,
-    GOLD_MSG_con,
-    GOLD_MSG_reg) values(
+ include $_SERVER['DOCUMENT_ROOT'].'/db-portfolio/php_process/connect/db_connect.php';
+  $sql="insert into portfolio_msg(
+    PORTFOLIO_MSG_name,
+    PORTFOLIO_MSG_email,
+    PORTFOLIO_MSG_tit,
+    PORTFOLIO_MSG_con,
+    PORTFOLIO_MSG_reg) values(
       '$msg_name',
       '$msg_email',
       '$msg_title',
@@ -26,7 +27,7 @@
       echo "
     <script>
     alert('메시지가 전송되었습니다.');
-      location.href='/gold/index.php';
+      location.href='/db-portfolio/index.php';
     </script>
     ";
 ?>

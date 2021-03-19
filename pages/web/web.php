@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gold</title>
+    <title>DB Portfolio</title>
 
     <!-- font awesome link -->
     <link
@@ -12,21 +12,21 @@
     />
 
     <!-- main style css link -->
-    <link rel="stylesheet" href="/gold/css/style.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/style.css" />
 
     <!-- devel css link -->
-    <link rel="stylesheet" href="/gold/css/devel_web_app.css">
+    <link rel="stylesheet" href="/db-portfolio/css/devel_web_app.css">
 
     <!-- animation css link -->
-    <link rel="stylesheet" href="/gold/css/animation.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/animation.css" />
 
     <!-- media query style css link -->
-    <link rel="stylesheet" href="/gold/css/media.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/media.css" />
   </head>
   <body>
     <div class="wrap">
       
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/header.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/header.php" ?>
 
       <section class="contents web hasTitle">
         <div class="center">
@@ -42,31 +42,31 @@
           <div class="webBoxes deWeBoxes">
 
             <?php
-              include $_SERVER['DOCUMENT_ROOT'].'/gold/php_process/connect/db_connect.php';
-              $sql="select * from gold_web order by GOLD_WEB_num desc";
+              include $_SERVER['DOCUMENT_ROOT'].'/db-portfolio/php_process/connect/db_connect.php';
+              $sql="select * from portfolio_web order by PORTFOLIO_WEB_num desc";
               // desc : 역순
               
               $web_result=mysqli_query($dbConn, $sql);
 
               while($web_row=mysqli_fetch_array($web_result)){
-                $web_num=$web_row['GOLD_WEB_num'];
-                $web_thumb_path=$web_row['GOLD_WEB_thumb'];
-                $web_title=$web_row['GOLD_WEB_tit'];
-                $web_desc=$web_row['GOLD_WEB_des'];
-                $web_domain=$web_row['GOLD_WEB_dom'];
+                $web_num=$web_row['PORTFOLIO_WEB_num'];
+                $web_thumb_path=$web_row['PORTFOLIO_WEB_thumb'];
+                $web_title=$web_row['PORTFOLIO_WEB_tit'];
+                $web_desc=$web_row['PORTFOLIO_WEB_des'];
+                $web_domain=$web_row['PORTFOLIO_WEB_dom'];
             ?>
 
               <div class="webBox deWeBox">
                 <div>
                   <p class="webImg deWeImg">
-                    <img src="/gold/data/web_page/thumb/<?=$web_thumb_path?>" alt="">
+                    <img src="/db-portfolio/data/web_page/thumb/<?=$web_thumb_path?>" alt="">
                   </p>
                   <div class="webTxt deWeTxt">
                     <h2><?=$web_title?></h2>
                     <em class="cutTxt"><?=$web_desc?></em>
                   </div>
                   <div class="webBoxBtns">
-                    <a href="/gold/pages/web/web_detail.php?num=<?=$web_num?>">View Details</a>
+                    <a href="/db-portfolio/pages/web/web_detail.php?num=<?=$web_num?>">View Details</a>
                     <a href="<?=$web_domain?>" target="_blank">View Website</a>
                   </div>
                 </div>
@@ -86,7 +86,7 @@
           ?>
             <a href="#" class="commonBtn webLoadMore">Loard More</a>
             <a href="#" class="commonBtn toTop">Go To Top</a>
-            <a href="/gold/pages/web/web_input_form.php" class="commonBtn">Upload Contents</a>
+            <a href="/db-portfolio/pages/web/web_input_form.php" class="commonBtn">Upload Contents</a>
           </div>
 
           <?php
@@ -102,13 +102,13 @@
   
       </section>
 
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/about.php" ?>
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/footer.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/about.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/footer.php" ?>
 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/gold/js/custom.js"></script>
-    <script src=/gold/js/web_devel_page.js></script>
+    <script src="/db-portfolio/js/custom.js"></script>
+    <script src=/db-portfolio/js/web_devel_page.js></script>
 
   </body>
 </html>

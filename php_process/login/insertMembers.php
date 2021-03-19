@@ -15,23 +15,23 @@
 
   // echo $input_id, $name, $pass, $email, $regist_day, $level, $point;
 
-  include $_SERVER['DOCUMENT_ROOT'].'/gold/php_process/connect/db_connect.php';
+  include $_SERVER['DOCUMENT_ROOT'].'/db-portfolio/php_process/connect/db_connect.php';
 
-  $sql="insert into gold_mem(
-    GOLD_mem_id, 
-    GOLD_mem_name, 
-    GOLD_mem_email, 	
-    GOLD_mem_pass, 
-    GOLD_mem_regi_day, 
-    GOLD_mem_level, 
-    GOLD_mem_point
+  $sql="insert into portfolio_mem(
+    PORTFOLIO_mem_id, 
+    PORTFOLIO_mem_name, 
+    PORTFOLIO_mem_email, 	
+    PORTFOLIO_mem_pass, 
+    PORTFOLIO_mem_regi_day, 
+    PORTFOLIO_mem_level, 
+    PORTFOLIO_mem_point
     )values('$member_id','$name','$email','$member_pass','$regist_day','$level','$point')";
 
   mysqli_query($dbConn, $sql);
 
   echo "
     <script>
-      location.href='/gold/index.php';
+      location.href='/db-portfolio/index.php';
     </script>
   ";
 ?>

@@ -2,23 +2,23 @@
  $devel_num=$_GET['num'];
   //  echo $devel_num;
   // database connect
-  include $_SERVER['DOCUMENT_ROOT'].'/gold/php_process/connect/db_connect.php';
-  $sql="select * from gold_de where GOLD_DE_num=$devel_num";
+  include $_SERVER['DOCUMENT_ROOT'].'/db-portfolio/php_process/connect/db_connect.php';
+  $sql="select * from portfolio_de where PORTFOLIO_DE_num=$devel_num";
   $devel_result=mysqli_query($dbConn, $sql);
   $devel_result_row=mysqli_fetch_array($devel_result);
 
-  $devel_result_tit=$devel_result_row['GOLD_DE_tit'];
-  $devel_result_ser=$devel_result_row['GOLD_DE_ser'];
-  $devel_result_des=$devel_result_row['GOLD_DE_des'];
-  $devel_result_img1=$devel_result_row['GOLD_DE_img1'];
-  $devel_result_img2=$devel_result_row['GOLD_DE_img2'];
-  $devel_result_thumb=$devel_result_row['GOLD_DE_thumb'];
-  $devel_result_cli=$devel_result_row['GOLD_DE_cli'];
-  $devel_result_reg=$devel_result_row['GOLD_DE_reg'];
+  $devel_result_tit=$devel_result_row['PORTFOLIO_DE_tit'];
+  $devel_result_ser=$devel_result_row['PORTFOLIO_DE_ser'];
+  $devel_result_des=$devel_result_row['PORTFOLIO_DE_des'];
+  $devel_result_img1=$devel_result_row['PORTFOLIO_DE_img1'];
+  $devel_result_img2=$devel_result_row['PORTFOLIO_DE_img2'];
+  $devel_result_thumb=$devel_result_row['PORTFOLIO_DE_thumb'];
+  $devel_result_cli=$devel_result_row['PORTFOLIO_DE_cli'];
+  $devel_result_reg=$devel_result_row['PORTFOLIO_DE_reg'];
 ?>
 <!-- devel input contents form -->
             <div class="develInputForm webdevelInput">
-              <form action="/gold/php_process/pages/devel_update.php?num=<?=$devel_num?>" method="post" name="devel_form" enctype="multipart/form-data">
+              <form action="/db-portfolio/php_process/pages/devel_update.php?num=<?=$devel_num?>" method="post" name="devel_form" enctype="multipart/form-data">
                 <div class="titleSer clear">
                   <p class="title_input">
                     <label for="title">Title</label>
@@ -46,7 +46,7 @@
                       <input type="file" id="mainImage" class="uploadHidden" name="main">
                     </div>
                     <div class="img1_box imgWrap">
-                      <img id="img1" src="/gold/data/devel_page/<?=$devel_result_img1?>">
+                      <img id="img1" src="/db-portfolio/data/devel_page/<?=$devel_result_img1?>">
                     </div>
                   </div>
                   <div class="uploadBox img2">
@@ -56,7 +56,7 @@
                       <input type="file" id="subImage" class="uploadHidden" name="sub">
                     </div>
                     <div class="img2_box imgWrap">
-                      <img id="img2" src="/gold/data/devel_page/<?=$devel_result_img2?>">
+                      <img id="img2" src="/db-portfolio/data/devel_page/<?=$devel_result_img2?>">
                     </div>
                   </div>
                   <div class="uploadBox img3">
@@ -66,7 +66,7 @@
                       <input type="file" id="thumbImage" class="uploadHidden" name="thumbnail">
                     </div>
                     <div class="thumb_box imgWrap">
-                      <img id="thumb" src="/gold/data/devel_page/thumb/<?=$devel_result_thumb?>">
+                      <img id="thumb" src="/db-portfolio/data/devel_page/thumb/<?=$devel_result_thumb?>">
                     </div>
                   </div>
                 </div>

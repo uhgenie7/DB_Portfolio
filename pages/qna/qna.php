@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gold</title>
+    <title>DB Portfolio</title>
 
     <!-- font awesome link -->
     <link
@@ -12,24 +12,24 @@
     />
 
     <!-- main style css link -->
-    <link rel="stylesheet" href="/gold/css/style.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/style.css" />
 
     <!-- devel css link -->
-    <link rel="stylesheet" href="/gold/css/devel_web_app.css">
+    <link rel="stylesheet" href="/db-portfolio/css/devel_web_app.css">
 
     <!-- qna css link -->
-    <link rel="stylesheet" href="/gold/css/qna.css">
+    <link rel="stylesheet" href="/db-portfolio/css/qna.css">
 
     <!-- animation css link -->
-    <link rel="stylesheet" href="/gold/css/animation.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/animation.css" />
 
     <!-- media query style css link -->
-    <link rel="stylesheet" href="/gold/css/media.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/media.css" />
   </head>
   <body>
     <div class="wrap">
       
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/header.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/header.php" ?>
 
       <section class="contents qna hasTitle">
         <div class="center">
@@ -55,7 +55,7 @@
 
             <div class="searchPaging clear">
               <div class="search">
-                <form action="/gold/pages/qna/qna_search_result.php" method="post" name="qnaSearch" class="clear qnaSearch">
+                <form action="/db-portfolio/pages/qna/qna_search_result.php" method="post" name="qnaSearch" class="clear qnaSearch">
                   <select name="searchSelect" id="" class="searchSelect">
                     <option value="qnaSearchId">아이디</option>
                     <option value="qnaSearchTitle">제목</option>
@@ -80,8 +80,8 @@
 
                 <?php
                 //database connect
-                include $_SERVER['DOCUMENT_ROOT']."/gold/php_process/connect/db_connect.php";
-                $sql="select * from gold_qna order by GOLD_QNA_num desc";
+                include $_SERVER['DOCUMENT_ROOT']."/db-portfolio/php_process/connect/db_connect.php";
+                $sql="select * from portfolio_qna order by PORTFOLIO_QNA_num desc";
 
                 $paging_result=mysqli_query($dbConn, $sql);
                 $total_record=mysqli_num_rows($paging_result);
@@ -114,7 +114,7 @@
                 <?php
                 if($userid==''){
                 ?>
-                <span><a href="/gold/pages/login/login_form.php">로그인</a></span>
+                <span><a href="/db-portfolio/pages/login/login_form.php">로그인</a></span>
                 <?php
                 } else {
                 ?>
@@ -124,7 +124,7 @@
                 ?>
                 
               </div>
-              <form action="/gold/php_process/pages/qna_insert.php?id=<?=$userid?>" method="post" class="writeForm" name="writeForm">
+              <form action="/db-portfolio/php_process/pages/qna_insert.php?id=<?=$userid?>" method="post" class="writeForm" name="writeForm">
                 <p class="qnaTitInput">
                   <label for="qnaTitle">제목</label>
                   <input type="text" name="qnaTitle" id="qnaTitle" placeholder="제목을 입력해 주세요.">
@@ -153,14 +153,14 @@
   
       </section>
 
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/about.php" ?>
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/footer.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/about.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/footer.php" ?>
 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/gold/js/custom.js"></script>
-    <script src="/gold/js/web_devel_page.js"></script>
-    <script src="/gold/js/qna_ajax.js"></script>
+    <script src="/db-portfolio/js/custom.js"></script>
+    <script src="/db-portfolio/js/web_devel_page.js"></script>
+    <script src="/db-portfolio/js/qna_ajax.js"></script>
     <script>
       const qnaSubmit = document.querySelector(".qnaSubmit");
       qnaSubmit.addEventListener('click', insertQan);

@@ -5,8 +5,8 @@
   if(!$check_id){
     echo "아이디를 입력해 주세요.";
   } else {
-    include $_SERVER['DOCUMENT_ROOT'].'/gold/php_process/connect/db_connect.php';
-    $sql="select * from gold_mem where GOLD_mem_id='$check_id'";
+    include $_SERVER['DOCUMENT_ROOT'].'/db-portfolio/php_process/connect/db_connect.php';
+    $sql="select * from portfolio_mem where PORTFOLIO_mem_id='$check_id'";
     $result = mysqli_query($dbConn, $sql);
     $num_record = mysqli_num_rows($result);
     if($num_record){

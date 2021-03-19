@@ -1,3 +1,4 @@
+<meta charset="UTF-8" />
 <?php
   $devel_title = nl2br($_REQUEST['devel_title']);
   $devel_title = addslashes($devel_title);
@@ -11,8 +12,8 @@
   $regist_day = date("Y-m-d");
 
 
-  $img_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/gold/data/devel_page/';
-  $thumb_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/gold/data/devel_page/thumb/';
+  $img_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/db-portfolio/data/devel_page/';
+  $thumb_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/db-portfolio/data/devel_page/thumb/';
 
 
   //main image
@@ -79,16 +80,16 @@
     }
 
     //database connect
-    include $_SERVER['DOCUMENT_ROOT'].'/gold/php_process/connect/db_connect.php';
-    $sql="insert into gold_de(
-    GOLD_DE_tit, 
-    GOLD_DE_ser, 
-    GOLD_DE_des, 
-    GOLD_DE_img1, 
-    GOLD_DE_img2, 
-    GOLD_DE_thumb, 
-    GOLD_DE_cli, 
-    GOLD_DE_reg) values(
+    include $_SERVER['DOCUMENT_ROOT'].'/db-portfolio/php_process/connect/db_connect.php';
+    $sql="insert into portfolio_de(
+    PORTFOLIO_DE_tit, 
+    PORTFOLIO_DE_ser, 
+    PORTFOLIO_DE_des, 
+    PORTFOLIO_DE_img1, 
+    PORTFOLIO_DE_img2, 
+    PORTFOLIO_DE_thumb, 
+    PORTFOLIO_DE_cli, 
+    PORTFOLIO_DE_reg) values(
       '$devel_title',
       '$devel_serial',
       '$devel_desc',
@@ -103,7 +104,7 @@
 
   echo "
     <script>
-      location.href='/gold/pages/devel/devel.php';
+      location.href='/db-portfolio/pages/devel/devel.php';
     </script>
     ";
 

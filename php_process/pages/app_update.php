@@ -1,3 +1,4 @@
+<meta charset="UTF-8" />
 <?php
   $app_update_num=$_GET['num'];
   $app_title = nl2br($_REQUEST['app_title']);
@@ -9,8 +10,8 @@
   $app_day = date("Y-m-d");
 
   
-  $img_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/gold/data/app_page/app_main/';
-  $thumb_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/gold/data/app_page/app_thumb/';
+  $img_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/db-portfolio/data/app_page/app_main/';
+  $thumb_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/db-portfolio/data/app_page/app_thumb/';
 
   //main image
   $main_name = $_FILES['app_main']['name'];
@@ -63,12 +64,12 @@
   }
 
      //database connect
-     include $_SERVER['DOCUMENT_ROOT'].'/gold/php_process/connect/db_connect.php';
-     $sql="update gold_app set GOLD_APP_tit='$app_title', GOLD_APP_ser='$app_serial', GOLD_APP_cli='$app_client', GOLD_APP_des='$app_desc', GOLD_APP_reg='$app_day', GOLD_APP_img='$main_name', GOLD_APP_thumb='$sub_name' where GOLD_APP_num='$app_update_num'";
+     include $_SERVER['DOCUMENT_ROOT'].'/db-portfolio/php_process/connect/db_connect.php';
+     $sql="update portfolio_app set PORTFOLIO_APP_tit='$app_title', PORTFOLIO_APP_ser='$app_serial', PORTFOLIO_APP_cli='$app_client', PORTFOLIO_APP_des='$app_desc', PORTFOLIO_APP_reg='$app_day', PORTFOLIO_APP_img='$main_name', PORTFOLIO_APP_thumb='$sub_name' where PORTFOLIO_APP_num='$app_update_num'";
      mysqli_query($dbConn, $sql);
 
      
-        $sql="select*from gold_app order by GOLD_APP_num desc";
+        $sql="select*from portfolio_app order by PORTFOLIO_APP_num desc";
 
         $app_result=mysqli_query($dbConn, $sql);
 
@@ -76,24 +77,24 @@
 
       while($app_row=mysqli_fetch_array($app_result)){
         array_push($arr_result, array(
-          'appnum'=>$app_row['GOLD_APP_num'],
-          'apptitle'=>$app_row['GOLD_APP_tit'],
-          'appser'=>$app_row['GOLD_APP_ser'],
-          'appdes'=>$app_row['GOLD_APP_des'],
-          'appmain'=>$app_row['GOLD_APP_img'],
-          'appthumb'=>$app_row['GOLD_APP_thumb'],
-          'appclient'=>$app_row['GOLD_APP_cli'],
-          'appreg'=>$app_row['GOLD_APP_reg']
+          'appnum'=>$app_row['PORTFOLIO_APP_num'],
+          'apptitle'=>$app_row['PORTFOLIO_APP_tit'],
+          'appser'=>$app_row['PORTFOLIO_APP_ser'],
+          'appdes'=>$app_row['PORTFOLIO_APP_des'],
+          'appmain'=>$app_row['PORTFOLIO_APP_img'],
+          'appthumb'=>$app_row['PORTFOLIO_APP_thumb'],
+          'appclient'=>$app_row['PORTFOLIO_APP_cli'],
+          'appreg'=>$app_row['PORTFOLIO_APP_reg']
         ));
       }
 
  // make json file
-  file_put_contents($_SERVER["DOCUMENT_ROOT"]."/gold/data/json/app.json", json_encode($arr_result, JSON_PRETTY_PRINT));
+  file_put_contents($_SERVER["DOCUMENT_ROOT"]."/db-portfolio/data/json/app.json", json_encode($arr_result, JSON_PRETTY_PRINT));
   // file_put~ 이기 때문에 0번째에 경로를 지정해주면 파일을 알아서 만들어주는 메서드
 
   echo "
   <script>
-    location.href='/gold/pages/app/app.php';
+    location.href='/db-portfolio/pages/app/app.php';
   </script>
   ";
 ?>

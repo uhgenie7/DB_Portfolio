@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gold</title>
+    <title>DB Portfolio</title>
 
     <!-- font awesome link -->
     <link
@@ -12,22 +12,22 @@
     />
 
     <!-- main style css link -->
-    <link rel="stylesheet" href="/gold/css/style.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/style.css" />
 
     <!-- devel form css link -->
-    <link rel="stylesheet" href="/gold/css/web_devel_input.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/web_devel_input.css" />
 
     <!-- animation css link -->
-    <link rel="stylesheet" href="/gold/css/animation.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/animation.css" />
 
     <!-- media query style css link -->
-    <link rel="stylesheet" href="/gold/css/media.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/media.css" />
 
   </head>
   <body>
     <div class="wrap">
       
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/header.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/header.php" ?>
 
       <section class="contents develUpload hasTitle">
         <div class="center">
@@ -41,7 +41,7 @@
           <!-- end of contact title -->
           <!-- devel input contents form -->
           <div class="webInputForm webdevelInput">
-            <form action="/gold/php_process/pages/web_insert.php" method="post" name="web_form" enctype="multipart/form-data">
+            <form action="/db-portfolio/php_process/pages/web_insert.php" method="post" name="web_form" enctype="multipart/form-data">
               <div class="titleSer clear">
                 <p class="title_input">
                   <label for="title">Title</label>
@@ -111,12 +111,12 @@
 
       </section>
 
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/about.php" ?>
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/footer.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/about.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/footer.php" ?>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/gold/js/custom.js"></script>
-    <script src="/gold/js/devel_upload.js"></script>
+    <script src="/db-portfolio/js/custom.js"></script>
+    <script src="/db-portfolio/js/devel_upload.js"></script>
     <script>
       const submitBtn = document.querySelector("#submitBtn");
       submitBtn.addEventListener('click', function(){

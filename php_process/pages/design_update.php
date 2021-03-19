@@ -1,3 +1,4 @@
+<meta charset="UTF-8" />
 <?php
     $design_update_num=$_GET['num'];
     $design_title = nl2br($_REQUEST['design_title']);
@@ -12,8 +13,8 @@
     $regist_day = date("Y-m-d");
   
   
-    $img_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/gold/data/design_page/';
-    $thumb_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/gold/data/design_page/thumb/';
+    $img_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/db-portfolio/data/design_page/';
+    $thumb_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/db-portfolio/data/design_page/thumb/';
   
       //main image
   $main_name = $_FILES['main']['name'];
@@ -79,18 +80,18 @@
     }
 
     //database connect
-    include $_SERVER['DOCUMENT_ROOT'].'/gold/php_process/connect/db_connect.php';
-    $sql="update gold_de set GOLD_DE_tit='$design_title', GOLD_DE_ser='$design_serial', GOLD_DE_des='$design_desc', GOLD_DE_img1='$main_name', GOLD_DE_img2='$sub_name', GOLD_DE_thumb='$thumbnail_name', GOLD_DE_cli='$design_client', GOLD_DE_reg='$regist_day' where GOLD_DE_num='$design_update_num'";
+    include $_SERVER['DOCUMENT_ROOT'].'/db-portfolio/php_process/connect/db_connect.php';
+    $sql="update portfolio_de set PORTFOLIO_DE_tit='$design_title', PORTFOLIO_DE_ser='$design_serial', PORTFOLIO_DE_des='$design_desc', PORTFOLIO_DE_img1='$main_name', PORTFOLIO_DE_img2='$sub_name', PORTFOLIO_DE_thumb='$thumbnail_name', PORTFOLIO_DE_cli='$design_client', PORTFOLIO_DE_reg='$regist_day' where PORTFOLIO_DE_num='$design_update_num'";
 
-    // $sql="insert into gold_de(
-    //   GOLD_DE_tit, 
-    //   GOLD_DE_ser, 
-    //   GOLD_DE_des, 
-    //   GOLD_DE_img1, 
-    //   GOLD_DE_img2, 
-    //   GOLD_DE_thumb, 
-    //   GOLD_DE_cli, 
-    //   GOLD_DE_reg) values(
+    // $sql="insert into portfolio_de(
+    //   PORTFOLIO_DE_tit, 
+    //   PORTFOLIO_DE_ser, 
+    //   PORTFOLIO_DE_des, 
+    //   PORTFOLIO_DE_img1, 
+    //   PORTFOLIO_DE_img2, 
+    //   PORTFOLIO_DE_thumb, 
+    //   PORTFOLIO_DE_cli, 
+    //   PORTFOLIO_DE_reg) values(
     //     '$design_title',
     //     '$design_serial',
     //     '$design_desc',
@@ -104,7 +105,7 @@
     echo "
     <script>
       alert('수정이 완료되었습니다.');
-      location.href='/gold/pages/design/design.php';
+      location.href='/db-portfolio/pages/design/design.php';
     </script>
   ";
 ?>

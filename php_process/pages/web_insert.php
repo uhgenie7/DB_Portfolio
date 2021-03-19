@@ -1,3 +1,4 @@
+<meta charset="UTF-8" />
 <?php
     $web_title = nl2br($_REQUEST['web_title']);
     $web_title = addslashes($web_title);
@@ -9,9 +10,9 @@
     $regist_day = date("Y-m-d");
 
     // web page image upload directory
-    $img_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/gold/data/web_page/pc/';
-    $mobile_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/gold/data/web_page/mobile/';
-    $thumb_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/gold/data/web_page/thumb/';
+    $img_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/db-portfolio/data/web_page/pc/';
+    $mobile_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/db-portfolio/data/web_page/mobile/';
+    $thumb_upload_dir=$_SERVER['DOCUMENT_ROOT'].'/db-portfolio/data/web_page/thumb/';
 
     //main image
     $main_name = $_FILES['main']['name'];
@@ -88,18 +89,18 @@
     }
 
     //database connect
-    include $_SERVER['DOCUMENT_ROOT'].'/gold/php_process/connect/db_connect.php';
+    include $_SERVER['DOCUMENT_ROOT'].'/db-portfolio/php_process/connect/db_connect.php';
 
-    $sql="insert into gold_web(
-        GOLD_WEB_tit,
-        GOLD_WEB_ser,
-        GOLD_WEB_des,
-        GOLD_WEB_img,
-        GOLD_WEB_mo,
-        GOLD_WEB_thumb,
-        GOLD_WEB_cli,
-        GOLD_WEB_reg,
-        GOLD_WEB_dom
+    $sql="insert into portfolio_web(
+        PORTFOLIO_WEB_tit,
+        PORTFOLIO_WEB_ser,
+        PORTFOLIO_WEB_des,
+        PORTFOLIO_WEB_img,
+        PORTFOLIO_WEB_mo,
+        PORTFOLIO_WEB_thumb,
+        PORTFOLIO_WEB_cli,
+        PORTFOLIO_WEB_reg,
+        PORTFOLIO_WEB_dom
         ) values(
         '$web_title',
         '$web_serial',
@@ -116,7 +117,7 @@
 
     echo "
     <script>
-      location.href='/gold/pages/web/web.php';
+      location.href='/db-portfolio/pages/web/web.php';
     </script>
     ";
 ?>

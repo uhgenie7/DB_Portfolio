@@ -3,26 +3,26 @@
   // 물음표 뒤에 있는 키의 이름을 저장하면 그 값을 출력함.
   // echo "get 변수".$de_detail_num;
 
-  include $_SERVER['DOCUMENT_ROOT'].'/gold/php_process/connect/db_connect.php';
+  include $_SERVER['DOCUMENT_ROOT'].'/db-portfolio/php_process/connect/db_connect.php';
 
-  $sql="select * from gold_web where GOLD_WEB_num=$web_detail_num";
+  $sql="select * from portfolio_web where PORTFOLIO_WEB_num=$web_detail_num";
 
   $result=mysqli_query($dbConn, $sql);
   $row=mysqli_fetch_array($result);
 
-  $web_detail_tit=$row['GOLD_WEB_tit'];
-  $web_detail_ser=$row['GOLD_WEB_ser'];
-  $web_detail_des=$row['GOLD_WEB_des'];
-  $web_detail_img=$row['GOLD_WEB_img'];
-  $web_detail_mo=$row['GOLD_WEB_mo'];
-  $web_detail_thumb=$row['GOLD_WEB_thumb'];
-  $web_detail_cli=$row['GOLD_WEB_cli'];
-  $web_detail_reg=$row['GOLD_WEB_reg'];
-  $web_detail_dom=$row['GOLD_WEB_dom'];
+  $web_detail_tit=$row['PORTFOLIO_WEB_tit'];
+  $web_detail_ser=$row['PORTFOLIO_WEB_ser'];
+  $web_detail_des=$row['PORTFOLIO_WEB_des'];
+  $web_detail_img=$row['PORTFOLIO_WEB_img'];
+  $web_detail_mo=$row['PORTFOLIO_WEB_mo'];
+  $web_detail_thumb=$row['PORTFOLIO_WEB_thumb'];
+  $web_detail_cli=$row['PORTFOLIO_WEB_cli'];
+  $web_detail_reg=$row['PORTFOLIO_WEB_reg'];
+  $web_detail_dom=$row['PORTFOLIO_WEB_dom'];
 ?>
 
 <div class="webInputForm webdevelInput">
-            <form action="/gold/php_process/pages/web_update.php?num=<?=$web_detail_num?>" method="post" name="web_form" enctype="multipart/form-data">
+            <form action="/db-portfolio/php_process/pages/web_update.php?num=<?=$web_detail_num?>" method="post" name="web_form" enctype="multipart/form-data">
               <div class="titleSer clear">
                 <p class="title_input">
                   <label for="title">Title</label>
@@ -54,7 +54,7 @@
                     <input type="file" id="mainImage" class="uploadHidden" name="main">
                   </div>
                   <div class="img1_box imgWrap">
-                    <img id="img1" src="/gold/data/web_page/pc/<?=$web_detail_img?>">
+                    <img id="img1" src="/db-portfolio/data/web_page/pc/<?=$web_detail_img?>">
                   </div>
                 </div>
                 <div class="uploadBox img2">
@@ -64,7 +64,7 @@
                     <input type="file" id="subImage" class="uploadHidden" name="mobile">
                   </div>
                   <div class="img2_box imgWrap">
-                    <img id="img2" src="/gold/data/web_page/mobile/<?=$web_detail_mo?>">
+                    <img id="img2" src="/db-portfolio/data/web_page/mobile/<?=$web_detail_mo?>">
                   </div>
                 </div>
                 <div class="uploadBox img3">
@@ -74,7 +74,7 @@
                     <input type="file" id="thumbImage" class="uploadHidden" name="thumbnail">
                   </div>
                   <div class="thumb_box imgWrap">
-                    <img id="thumb" src="/gold/data/web_page/thumb/<?=$web_detail_thumb?>">
+                    <img id="thumb" src="/db-portfolio/data/web_page/thumb/<?=$web_detail_thumb?>">
                   </div>
                 </div>
                 </div>

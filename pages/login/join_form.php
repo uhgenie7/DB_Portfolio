@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gold</title>
+    <title>DB Portfolio</title>
 
     <!-- font awesome link -->
     <link
@@ -12,22 +12,22 @@
     />
 
     <!-- main style css link -->
-    <link rel="stylesheet" href="/gold/css/style.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/style.css" />
 
     <!-- join form css link -->
-    <link rel="stylesheet" href="/gold/css/join_form.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/join_form.css" />
 
     <!-- animation css link -->
-    <link rel="stylesheet" href="/gold/css/animation.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/animation.css" />
 
     <!-- media query style css link -->
-    <link rel="stylesheet" href="/gold/css/media.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/media.css" />
 
   </head>
   <body>
     <div class="wrap">
       
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/header.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/header.php" ?>
 
       <section class="contents join hasTitle">
         <div class="center">
@@ -42,7 +42,7 @@
           <!-- end of contact title -->
 
           <div class="joinBox">
-            <form action="/gold/php_process/login/insertMembers.php" method="post" name="memberForm">
+            <form action="/db-portfolio/php_process/login/insertMembers.php" method="post" name="memberForm">
               <p class="idInputBox inputBox">
                 <label for="id">ID</label>
                 <input type="text" name="id" class="columnTitle" id="id" placeholder="Your ID">
@@ -78,17 +78,17 @@
 
       </section>
 
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/about.php" ?>
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/footer.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/about.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/footer.php" ?>
 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/gold/js/custom.js"></script>
-    <script src="/gold/js/join_check.js"></script>
+    <script src="/db-portfolio/js/custom.js"></script>
+    <script src="/db-portfolio/js/join_check.js"></script>
     <script>
       $(function(){
         $("#idCheck").click(function(){
-          const url = '/gold/php_process/login/member_check_id.php?id=' + $("#id").val();
+          const url = '/db-portfolio/php_process/login/member_check_id.php?id=' + $("#id").val();
           $.get(url, function(data){
             alert(data);
           });

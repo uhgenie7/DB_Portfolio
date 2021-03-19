@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gold</title>
+    <title>DB Portfolio</title>
 
     <!-- font awesome link -->
     <link
@@ -12,22 +12,22 @@
     />
 
     <!-- main style css link -->
-    <link rel="stylesheet" href="/gold/css/style.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/style.css" />
 
     <!-- devel css link -->
-    <link rel="stylesheet" href="/gold/css/devel_web_app.css">
+    <link rel="stylesheet" href="/db-portfolio/css/devel_web_app.css">
 
     <!-- animation css link -->
-    <link rel="stylesheet" href="/gold/css/animation.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/animation.css" />
 
     <!-- media query style css link -->
-    <link rel="stylesheet" href="/gold/css/media.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/media.css" />
 
   </head>
   <body>
     <div class="wrap">
       
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/header.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/header.php" ?>
 
       <section class="contents app hasTitle">
         <div class="center">
@@ -53,7 +53,7 @@
           ?>
             <button class="commonBtn appLoadMore">Loard More</button>
             <a href="#" class="commonBtn toTop">Go To Top</a>
-            <a href="/gold/pages/app/app_input_form.php" class="commonBtn">Upload Contents</a>
+            <a href="/db-portfolio/pages/app/app_input_form.php" class="commonBtn">Upload Contents</a>
           </div>
 
           <?php
@@ -69,15 +69,15 @@
   
       </section>
 
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/about.php" ?>
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/footer.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/about.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/footer.php" ?>
 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-    <script src="/gold/js/custom.js"></script>
-    <script src="/gold/js/web_devel_page.js"></script>
-    <script src="/gold/js/app.js"></script>
+    <script src="/db-portfolio/js/custom.js"></script>
+    <script src="/db-portfolio/js/web_devel_page.js"></script>
+    <script src="/db-portfolio/js/app.js"></script>
   </body>
 </html>

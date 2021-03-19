@@ -1,3 +1,4 @@
+<meta charset="UTF-8" />
 <?php
   $ans_qna_num=$_GET['num'];
   $ans_con=$_POST['ansInputTxt'];
@@ -6,11 +7,11 @@
 
   // echo $ans_qna_num, $ans_con, $ans_reg;
 
-  include $_SERVER['DOCUMENT_ROOT'].'/gold/php_process/connect/db_connect.php';
-  $sql="insert into gold_ans(
-    GOLD_ANS_QNA_num,
-    GOLD_ANS_con,
-    GOLD_ANS_reg) values(
+  include $_SERVER['DOCUMENT_ROOT'].'/db-portfolio/php_process/connect/db_connect.php';
+  $sql="insert into portfolio_ans(
+    PORTFOLIO_ANS_QNA_num,
+    PORTFOLIO_ANS_con,
+    PORTFOLIO_ANS_reg) values(
       '$ans_qna_num',
       '$ans_con',
       '$ans_reg')";
@@ -19,7 +20,7 @@
       echo "
     <script>
     alert('답변 등록이 완료되었습니다.');
-      location.href='/gold/pages/qna/qna.php';
+      location.href='/db-portfolio/pages/qna/qna.php';
     </script>
     ";
 ?>

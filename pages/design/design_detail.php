@@ -1,29 +1,29 @@
 <?php
   $design_detail_num=$_GET['num'];
 
-  include $_SERVER['DOCUMENT_ROOT'].'/gold/php_process/connect/db_connect.php';
+  include $_SERVER['DOCUMENT_ROOT'].'/db-portfolio/php_process/connect/db_connect.php';
 
-  $sql="select * from gold_de where GOLD_DE_num=$design_detail_num";
+  $sql="select * from portfolio_de where PORTFOLIO_DE_num=$design_detail_num";
 
   $result=mysqli_query($dbConn, $sql);
   $row=mysqli_fetch_array($result);
 
-  $design_detail_tit=$row['GOLD_DE_tit'];
-  $design_detail_ser=$row['GOLD_DE_ser'];
-  $design_detail_des=$row['GOLD_DE_des'];
-  $design_detail_img1=$row['GOLD_DE_img1'];
-  $design_detail_img2=$row['GOLD_DE_img2'];
-  $design_detail_thumb=$row['GOLD_DE_thumb'];
-  $design_detail_cli=$row['GOLD_DE_cli'];
-  $design_detail_reg=$row['GOLD_DE_reg'];
+  $design_detail_tit=$row['PORTFOLIO_DE_tit'];
+  $design_detail_ser=$row['PORTFOLIO_DE_ser'];
+  $design_detail_des=$row['PORTFOLIO_DE_des'];
+  $design_detail_img1=$row['PORTFOLIO_DE_img1'];
+  $design_detail_img2=$row['PORTFOLIO_DE_img2'];
+  $design_detail_thumb=$row['PORTFOLIO_DE_thumb'];
+  $design_detail_cli=$row['PORTFOLIO_DE_cli'];
+  $design_detail_reg=$row['PORTFOLIO_DE_reg'];
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gold</title>
+    <title>DB Portfolio</title>
 
     <!-- font awesome link -->
     <link
@@ -32,20 +32,20 @@
     />
 
     <!-- main style css link -->
-    <link rel="stylesheet" href="/gold/css/style.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/style.css" />
 
     <!-- design css link -->
-    <link rel="stylesheet" href="/gold/css/design_web_app.css">
+    <link rel="stylesheet" href="/db-portfolio/css/design_web_app.css">
 
     <!-- animation css link -->
-    <link rel="stylesheet" href="/gold/css/animation.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/animation.css" />
 
     <!-- media query style css link -->
-    <link rel="stylesheet" href="/gold/css/media.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/media.css" />
   </head>
   <body>
     <div class="wrap"> 
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/header.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/header.php" ?>
       <section class="contents designDetail deWeDetail">
         <div class="center clear">
           <div class="designLeft deWeLeft">
@@ -61,28 +61,28 @@
             <div class="detailCon">
               <div class="detailImg1 clear">
                 <div class="imgBox">
-                  <img src="/gold/data/design_page/<?=$design_detail_img1?>" alt="">
+                  <img src="/db-portfolio/data/design_page/<?=$design_detail_img1?>" alt="">
                 </div>
                 <div class="imgBox">
-                  <img src="/gold/data/design_page/<?=$design_detail_img2?>" alt="">
+                  <img src="/db-portfolio/data/design_page/<?=$design_detail_img2?>" alt="">
                 </div>
                 <div class="imgNav">
                   <a href="#" class="active">
-                    <img src="/gold/data/design_page/<?=$design_detail_img1?>" alt="">
+                    <img src="/db-portfolio/data/design_page/<?=$design_detail_img1?>" alt="">
                     <span class="dotOverlay"></span>
                   </a>
-                  <a href="#"><img src="/gold/data/design_page/<?=$design_detail_img2?>" alt="">
+                  <a href="#"><img src="/db-portfolio/data/design_page/<?=$design_detail_img2?>" alt="">
                   <span class="dotOverlay"></span>
                   </a>
                 </div>
               </div>
               <p class="detailInfo">
-                Designed By Gold Design Team / <?=$design_detail_ser?> / Used in <?=$design_detail_cli?> / <?=$design_detail_reg?>
+                Designed By DB Portfolio Design / <?=$design_detail_ser?> / Used in <?=$design_detail_cli?> / <?=$design_detail_reg?>
               </p>
 
               <div class="detailDesc">
                 <p><?=$design_detail_des?></p>
-                <a href="/gold/index.php#contact"><i class="fa fa-arrow-right"></i>Get In Touch With...</a>
+                <a href="/db-portfolio/index.php#contact"><i class="fa fa-arrow-right"></i>Get In Touch With...</a>
               </div>
 
               <?php
@@ -94,7 +94,7 @@
               ?>
               
                 <div class="productAdminBtns">
-                  <button type="button" onclick="location.href='/gold/pages/admin/update_product.php?key=design_update_form&num=<?=$design_detail_num?>'">수정</button>
+                  <button type="button" onclick="location.href='/db-portfolio/pages/admin/update_product.php?key=design_update_form&num=<?=$design_detail_num?>'">수정</button>
                   <button type="button" onclick="confirmDel()">삭제</button>
                 </div>
               
@@ -109,7 +109,7 @@
                 if(confirmCheck == false){
                   return false;
                 } else {
-                  location.href='/gold/php_process/pages/design_detail_delete.php?num=<?=$design_detail_num?>';
+                  location.href='/db-portfolio/php_process/pages/design_detail_delete.php?num=<?=$design_detail_num?>';
                 }            
               }
             </script>
@@ -117,9 +117,9 @@
           </div>
           <!-- end of left box -->
           <div class="designRight deWeRight">
-            <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/web_side_detail.php" ?>
+            <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/web_side_detail.php" ?>
             <!-- end of detail web -->
-            <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/app_side_detail.php" ?>
+            <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/app_side_detail.php" ?>
             <!-- end of detail app -->
           </div>
           <!-- end of right box -->
@@ -128,12 +128,12 @@
           <!-- end of center -->
       </section>
   
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/about.php" ?>
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/footer.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/about.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/footer.php" ?>
 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/gold/js/custom.js"></script>
+    <script src="/db-portfolio/js/custom.js"></script>
     <script>
       $(function(){
         $(".imgNav>a").click(function(e){

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gold</title>
+    <title>DB Portfolio</title>
 
     <!-- font awesome link -->
     <link
@@ -12,23 +12,23 @@
     />
 
     <!-- main style css link -->
-    <link rel="stylesheet" href="/gold/css/style.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/style.css" />
 
     <!-- login css link -->
-    <link rel="stylesheet" href="/gold/css/login.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/login.css" />
 
     <!-- animation css link -->
-    <link rel="stylesheet" href="/gold/css/animation.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/animation.css" />
 
     <!-- media query style css link -->
-    <link rel="stylesheet" href="/gold/css/media.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/media.css" />
 
-    <script src="/gold/js/join_check.js" defer></script>
+    <script src="/db-portfolio/js/join_check.js" defer></script>
   </head>
   <body>
     <div class="wrap">
       
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/header.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/header.php" ?>
 
       <section class="contents login hasTitle">
         <div class="center">
@@ -43,13 +43,13 @@
           <!-- end of contact title -->
 
           <!-- login box -->
-          <form action="/gold/php_process/login/login.php" method="post" name="loginForm">
+          <form action="/db-portfolio/php_process/login/login.php" method="post" name="loginForm">
             <div class="loginBox">
               <p><input type="text" placeholder="Enter your ID" name="loginId"></p>
               <p><input type="password" placeholder="Enter your Password" name="loginPass"></p>
               <div class="loginBtns">
                 <a href="#" class="loginBtn">LOGIN</a>
-                <a href="/gold/pages/login/join_form.php" class="joinBtn">JOIN US</a>
+                <a href="/db-portfolio/pages/login/join_form.php" class="joinBtn">JOIN US</a>
               </div>
             </div>
           </form>
@@ -63,12 +63,12 @@
 
       </section>
 
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/about.php" ?>
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/footer.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/about.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/footer.php" ?>
       
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/gold/js/custom.js"></script>
+    <script src="/db-portfolio/js/custom.js"></script>
     <script>
       const logBtn = document.querySelector('.loginBtn')
       logBtn.addEventListener('click', checkLogin);

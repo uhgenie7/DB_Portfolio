@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gold</title>
+    <title>DB Portfolio</title>
 
     <!-- font awesome link -->
     <link
@@ -12,24 +12,24 @@
     />
 
     <!-- main style css link -->
-    <link rel="stylesheet" href="/gold/css/style.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/style.css" />
 
     <!-- devel css link -->
-    <link rel="stylesheet" href="/gold/css/devel_web_app.css">
+    <link rel="stylesheet" href="/db-portfolio/css/devel_web_app.css">
 
     <!-- qna css link -->
-    <link rel="stylesheet" href="/gold/css/qna.css">
+    <link rel="stylesheet" href="/db-portfolio/css/qna.css">
 
     <!-- animation css link -->
-    <link rel="stylesheet" href="/gold/css/animation.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/animation.css" />
 
     <!-- media query style css link -->
-    <link rel="stylesheet" href="/gold/css/media.css" />
+    <link rel="stylesheet" href="/db-portfolio/css/media.css" />
   </head>
   <body>
     <div class="wrap">
       
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/header.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/header.php" ?>
 
       <section class="contents qna hasTitle">
         <div class="center">
@@ -49,21 +49,21 @@
 
           $ans_num = $_GET['num'];
           //database connect
-          include $_SERVER['DOCUMENT_ROOT']."/gold/php_process/connect/db_connect.php";
-          $sql="select * from gold_qna where GOLD_QNA_num=$ans_num";
+          include $_SERVER['DOCUMENT_ROOT']."/db-portfolio/php_process/connect/db_connect.php";
+          $sql="select * from portfolio_qna where PORTFOLIO_QNA_num=$ans_num";
 
           $ans_result=mysqli_query($dbConn, $sql);
           $ans_row=mysqli_fetch_array($ans_result);
 
-          $ans_id=$ans_row['GOLD_QNA_id'];
-          $ans_tit=$ans_row['GOLD_QNA_tit'];
-          $ans_con=$ans_row['GOLD_QNA_con'];
-          $ans_reg=$ans_row['GOLD_QNA_reg'];
-          $ans_hit=$ans_row['GOLD_QNA_hit'];
+          $ans_id=$ans_row['PORTFOLIO_QNA_id'];
+          $ans_tit=$ans_row['PORTFOLIO_QNA_tit'];
+          $ans_con=$ans_row['PORTFOLIO_QNA_con'];
+          $ans_reg=$ans_row['PORTFOLIO_QNA_reg'];
+          $ans_hit=$ans_row['PORTFOLIO_QNA_hit'];
 
           $new_hit=$ans_hit + 1;
 
-          $sql="update gold_qna set GOLD_QNA_hit=$new_hit where GOLD_QNA_num=$ans_num";
+          $sql="update portfolio_qna set PORTFOLIO_QNA_hit=$new_hit where PORTFOLIO_QNA_num=$ans_num";
 
           mysqli_query($dbConn, $sql);
           
@@ -73,7 +73,7 @@
               <p>Posted By <?=$ans_id?> No.<?=$ans_num?> / <?=$ans_reg?> / <?=$ans_hit?> Hits</p>
             </div>
             <div class="writeBox clear">
-              <form action="/gold/php_process/pages/qna_update.php?num=<?=$ans_num?>" method="post" class="writeForm" name="ansForm">
+              <form action="/db-portfolio/php_process/pages/qna_update.php?num=<?=$ans_num?>" method="post" class="writeForm" name="ansForm">
                 <p class="qnaTitInput">
                   <label for="ansTitle">제목</label>
                   <input type="text" name="ansTitle" id="ansTitle" placeholder="제목을 입력해 주세요." value="<?=$ans_tit?>">
@@ -89,7 +89,7 @@
               <?php
               } else {
               ?>       
-              <a href='/gold/pages/qna/qna.php' class="ansBack">돌아가기</a>
+              <a href='/db-portfolio/pages/qna/qna.php' class="ansBack">돌아가기</a>
               <button type="submit" class="ansUpdate" onclick="ansUpdate()">수정</button>
               <?php
               }
@@ -100,15 +100,15 @@
             <?php
             $ans_num = $_GET['num'];
             //database connect
-            include $_SERVER['DOCUMENT_ROOT']."/gold/php_process/connect/db_connect.php";
-            $sql="select * from gold_ans where GOLD_ANS_QNA_num=$ans_num order by GOLD_ANS_num desc";
+            include $_SERVER['DOCUMENT_ROOT']."/db-portfolio/php_process/connect/db_connect.php";
+            $sql="select * from portfolio_ans where PORTFOLIO_ANS_QNA_num=$ans_num order by PORTFOLIO_ANS_num desc";
 
             $rep_result=mysqli_query($dbConn, $sql);
             
             
             while($rep_row=mysqli_fetch_array($rep_result)){
-              $rep_con=$rep_row['GOLD_ANS_con'];
-              $rep_ans_num=$rep_row['GOLD_ANS_num'];
+              $rep_con=$rep_row['PORTFOLIO_ANS_con'];
+              $rep_ans_num=$rep_row['PORTFOLIO_ANS_num'];
             ?>
 
             <div class="ansResult">
@@ -117,7 +117,7 @@
                 <?php
                 if($userlevel == 1){
                 ?>
-                <a href="/gold/php_process/pages/ans_delete.php?num=<?=$rep_ans_num?>" class="ansDeleteBtn">삭제</a>
+                <a href="/db-portfolio/php_process/pages/ans_delete.php?num=<?=$rep_ans_num?>" class="ansDeleteBtn">삭제</a>
                 <?php
                 }
                 ?>
@@ -130,7 +130,7 @@
             ?>
 
             <div class="answerBox">
-              <form action="/gold/php_process/pages/ans_insert.php?num=<?=$ans_num?>" method="post" name="ansInputForm" class="ansInputForm">
+              <form action="/db-portfolio/php_process/pages/ans_insert.php?num=<?=$ans_num?>" method="post" name="ansInputForm" class="ansInputForm">
                 <textarea name="ansInputTxt" placeholder="답글을 작성해 주세요."></textarea>
                 <p class="ansBtnBox">
                 <?php
@@ -155,13 +155,13 @@
   
       </section>
 
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/about.php" ?>
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/footer.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/about.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/footer.php" ?>
 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/gold/js/custom.js"></script>
-    <script src="/gold/js/web_devel_page.js"></script>
+    <script src="/db-portfolio/js/custom.js"></script>
+    <script src="/db-portfolio/js/web_devel_page.js"></script>
     <script>
       // const ansBtn = document.querySelector(".ansBtn");
       // ansBtn.addEventListener('click', insertAns);

@@ -2,25 +2,25 @@
 
   $app_detail_num=$_GET['num'];
 
-  include $_SERVER['DOCUMENT_ROOT'].'/gold/php_process/connect/db_connect.php';
+  include $_SERVER['DOCUMENT_ROOT'].'/db-portfolio/php_process/connect/db_connect.php';
 
-  $sql="select * from gold_app where GOLD_APP_num=$app_detail_num";
+  $sql="select * from portfolio_app where PORTFOLIO_APP_num=$app_detail_num";
 
   $result=mysqli_query($dbConn, $sql);
   $row=mysqli_fetch_array($result);
 
-  $app_detail_tit=$row['GOLD_APP_tit'];
-  $app_detail_ser=$row['GOLD_APP_ser'];
-  $app_detail_des=$row['GOLD_APP_des'];
-  $app_detail_img=$row['GOLD_APP_img'];
-  $app_detail_thumb=$row['GOLD_APP_thumb'];
-  $app_detail_cli=$row['GOLD_APP_cli'];
-  $app_detail_reg=$row['GOLD_APP_reg'];
+  $app_detail_tit=$row['PORTFOLIO_APP_tit'];
+  $app_detail_ser=$row['PORTFOLIO_APP_ser'];
+  $app_detail_des=$row['PORTFOLIO_APP_des'];
+  $app_detail_img=$row['PORTFOLIO_APP_img'];
+  $app_detail_thumb=$row['PORTFOLIO_APP_thumb'];
+  $app_detail_cli=$row['PORTFOLIO_APP_cli'];
+  $app_detail_reg=$row['PORTFOLIO_APP_reg'];
 
 ?>
 <!-- devel input contents form -->
 <div class="develInputForm webdevelInput appdevelInput">
-            <form action="/gold/php_process/pages/app_update.php?num=<?=$app_detail_num?>" method="post" name="app_form" enctype="multipart/form-data">
+            <form action="/db-portfolio/php_process/pages/app_update.php?num=<?=$app_detail_num?>" method="post" name="app_form" enctype="multipart/form-data">
               <div class="titleSer clear">
                 <p class="title_input">
                   <label for="title">Title</label>
@@ -48,7 +48,7 @@
                     <input type="file" id="mainImage" class="uploadHidden" name="app_main">
                   </div>
                   <div class="img1_box imgWrap">
-                    <img id="img1" src="/gold/data/app_page/app_main/<?=$app_detail_img?>">
+                    <img id="img1" src="/db-portfolio/data/app_page/app_main/<?=$app_detail_img?>">
                   </div>
                 </div>
                 <div class="uploadBox appImg img2">
@@ -58,7 +58,7 @@
                     <input type="file" id="subImage" class="uploadHidden" name="app_sub">
                   </div>
                   <div class="img2_box imgWrap">
-                    <img id="img2" src="/gold/data/app_page/app_thumb/<?=$app_detail_thumb?>">
+                    <img id="img2" src="/db-portfolio/data/app_page/app_thumb/<?=$app_detail_thumb?>">
                   </div>
                 </div>
                 </div>
