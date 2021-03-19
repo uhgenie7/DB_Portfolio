@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <meta name="description" content="db-portfolio for hyejin" />
+    <meta name="author" content="hyejin" />
+    <title>DB Portfolio</title>
     <!-- font awesome link -->
     <link
       rel="stylesheet"
@@ -18,7 +20,7 @@
   </head>
   <body>
     <div class="wrap">
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/header.php" ?>   
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/header.php" ?>   
         <!-- new Project title -->
       <section class="contents newProject">
         <div class="center clear">
@@ -30,7 +32,7 @@
           </div>
           <!-- end of new Project title -->
           <?php
-            include $_SERVER['DOCUMENT_ROOT'].'/gold/php_process/connect/db_connect.php';
+            include $_SERVER['DOCUMENT_ROOT'].'/db-portfolio/php_process/connect/db_connect.php';
           ?>
           <div class="newProjectBox">
             <div class="newProjectCon first">
@@ -75,16 +77,16 @@
             <div class="boxLeft">
 
               <?php
-                $sql="select * from gold_de order by GOLD_DE_num desc limit 4";
+                $sql="select * from portfolio_de order by PORTFOLIO_DE_num desc limit 4";
                 $result_devel=mysqli_query($dbConn, $sql);
 
                 while($row_result=mysqli_fetch_array($result_devel)){
-                  $devel_thumb=$row_result['GOLD_DE_thumb']
+                  $devel_thumb=$row_result['PORTFOLIO_DE_thumb']
                   
               ?>
 
               <div class="develImg">
-                <img src="/gold/data/devel_page/thumb/<?=$devel_thumb?>" alt="" />
+                <img src="/db-portfolio/data/devel_page/thumb/<?=$devel_thumb?>" alt="" />
                 <span class="outline"><i class="fa fa-search"></i></span>
               </div>
               
@@ -96,19 +98,19 @@
             <div class="boxRight">
 
               <?php
-                $sql="select * from gold_de order by GOLD_DE_num desc limit 4";
+                $sql="select * from portfolio_de order by PORTFOLIO_DE_num desc limit 4";
                 $result_devel=mysqli_query($dbConn, $sql);
                 while($row_result=mysqli_fetch_array($result_devel)){
-                  $devel_num=$row_result['GOLD_DE_num'];
-                  $devel_tit=$row_result['GOLD_DE_tit'];
-                  $devel_des=$row_result['GOLD_DE_des'];
+                  $devel_num=$row_result['PORTFOLIO_DE_num'];
+                  $devel_tit=$row_result['PORTFOLIO_DE_tit'];
+                  $devel_des=$row_result['PORTFOLIO_DE_des'];
               ?>
 
               <div class="develTxt">
                 <div>
                   <h2><?=$devel_tit?></h2>
                   <p><?=$devel_des?></p>
-                  <a href="/gold/pages/devel/devel_detail.php?num=<?=$devel_num?>">view more</a>
+                  <a href="/db-portfolio/pages/devel/devel_detail.php?num=<?=$devel_num?>">view more</a>
                 </div>
               </div>
               <!-- end of devel txt panel -->
@@ -130,35 +132,34 @@
             </div>
           </div>
           <!-- end of common title -->
-
-          <div class="fashionBox men">
-            <div class="fashionTxt">
+          <div class="webAppBox webs">
+            <div class="webAppTxt">
               <h2><em>WEB</em> PROJECTS</h2>
               <p>
                 웹에 최적화된 프로젝트
               </p>
-              <a href="/gold/pages/web/web.php">view more</a>
+              <a href="/db-portfolio/pages/web/web.php">view more</a>
             </div>
             <!-- loop fasionImp start -->
             <?php
-              include $_SERVER['DOCUMENT_ROOT'].'/gold/php_process/connect/db_connect.php';
-              $sql="select * from gold_web order by GOLD_WEB_num desc limit 3";
+              include $_SERVER['DOCUMENT_ROOT'].'/db-portfolio/php_process/connect/db_connect.php';
+              $sql="select * from portfolio_web order by PORTFOLIO_WEB_num desc limit 3";
 
               $web_result=mysqli_query($dbConn, $sql);
 
               while($web_row=mysqli_fetch_array($web_result)){
-                $web_num=$web_row['GOLD_WEB_num'];
-                $web_thumb_path=$web_row['GOLD_WEB_thumb'];
-                $web_title=$web_row['GOLD_WEB_tit'];
-                $web_desc=$web_row['GOLD_WEB_des'];
+                $web_num=$web_row['PORTFOLIO_WEB_num'];
+                $web_thumb_path=$web_row['PORTFOLIO_WEB_thumb'];
+                $web_title=$web_row['PORTFOLIO_WEB_tit'];
+                $web_desc=$web_row['PORTFOLIO_WEB_des'];
             ?>
 
-              <div class="fasionImg">
+              <div class="webAppImg">
                 <div>
-                  <img src="/gold/data/web_page/thumb/<?=$web_thumb_path?>" alt="" />
+                  <img src="/db-portfolio/data/web_page/thumb/<?=$web_thumb_path?>" alt="" />
                   <h2><?=$web_title?></h2>
                   <em class="cutTxt"><?=$web_desc?></em>
-                  <a href="/gold/pages/web/web_detail.php?num=<?=$web_num?>">View Details</a>
+                  <a href="/db-portfolio/pages/web/web_detail.php?num=<?=$web_num?>">View Details</a>
                 </div>
               </div>
             
@@ -168,34 +169,34 @@
           </div>
           <!-- loop end -->
           <!-- end of web project -->
-          <div class="fashionBox men">
-            <div class="fashionTxt">
+          <div class="webAppBox webs">
+            <div class="webAppTxt">
               <h2><em>APP</em> PROJECTS</h2>
               <p>
                 모바일에 최적화된 프로젝트
               </p>
-              <a href="/gold/pages/app/app.php">view more</a>
+              <a href="/db-portfolio/pages/app/app.php">view more</a>
             </div>
             <!-- loop fasionImp start -->
             <?php
-              include $_SERVER['DOCUMENT_ROOT'].'/gold/php_process/connect/db_connect.php';
-              $sql="select * from gold_app order by GOLD_APP_num desc limit 3";
+              include $_SERVER['DOCUMENT_ROOT'].'/db-portfolio/php_process/connect/db_connect.php';
+              $sql="select * from portfolio_app order by PORTFOLIO_APP_num desc limit 3";
 
               $app_result=mysqli_query($dbConn, $sql);
 
               while($app_row=mysqli_fetch_array($app_result)){
-                $app_num=$app_row['GOLD_APP_num'];
-                $app_thumb_path=$app_row['GOLD_APP_thumb'];
-                $app_title=$app_row['GOLD_APP_tit'];
-                $app_desc=$app_row['GOLD_APP_des'];
+                $app_num=$app_row['PORTFOLIO_APP_num'];
+                $app_thumb_path=$app_row['PORTFOLIO_APP_thumb'];
+                $app_title=$app_row['PORTFOLIO_APP_tit'];
+                $app_desc=$app_row['PORTFOLIO_APP_des'];
             ?>
 
-              <div class="fasionImg">
+              <div class="webAppImg">
                 <div>
-                  <img src="/gold/data/app_page/app_thumb/<?=$app_thumb_path?>" alt="" />
+                  <img src="/db-portfolio/data/app_page/app_thumb/<?=$app_thumb_path?>" alt="" />
                   <h2><?=$app_title?></h2>
                   <em class="cutTxt"><?=$app_desc?></em>
-                  <a href="/gold/pages/app/app_detail.php?num=<?=$app_num?>">View Details</a>
+                  <a href="/db-portfolio/pages/app/app_detail.php?num=<?=$app_num?>">View Details</a>
                 </div>
               </div>
             
@@ -226,7 +227,7 @@
               </div>
             </div>
             <div class="formBox">
-              <form action="/gold/php_process/pages/msg_insert.php" method="post" class="form" name="msgForm">
+              <form action="/db-portfolio/php_process/pages/msg_insert.php" method="post" class="form" name="msgForm">
                 <p class="nameMail">
                   <input type="text" name="msgName" placeholder="Your Name" />
                   <input type="text" name="msgEmail" placeholder="Your Email" />
@@ -244,8 +245,8 @@
         </div>
       </section>
       <!-- end of contact section -->
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/about.php" ?>
-      <?php include $_SERVER["DOCUMENT_ROOT"]."/gold/include/footer.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/about.php" ?>
+      <?php include $_SERVER["DOCUMENT_ROOT"]."/db-portfolio/include/footer.php" ?>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
