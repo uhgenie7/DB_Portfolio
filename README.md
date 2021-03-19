@@ -33,3 +33,6 @@ http://uhj1993.dothome.co.kr/db-portfolio/
 - [JavaScript]
 - [JQuery]
 - [MariaDB]
+
+## WIKI
+[설계](https://github.com/uhj1993/DB_Portfolio/wiki#)
