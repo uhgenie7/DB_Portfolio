@@ -523,17 +523,17 @@ button.commonBtn {
 }
 
 /* our devel section style */
-.fashionBox {
+.webAppBox {
   width: 100%;
   height: auto;
   float: left;
   display: flex;
   padding: 50px 0;
 }
-.fashionBox.men {
+.webAppBox.webs {
   border-bottom: 1px solid #ddd;
 }
-.fashionBox .fashionTxt {
+.webAppBox .webAppTxt {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -542,57 +542,57 @@ button.commonBtn {
   text-align: center;
 }
 
-.fashionBox .fashionTxt h2 {
+.webAppBox .webAppTxt h2 {
   color: #333;
   font-size: 24px;
   font-weight: 400;
 }
-.fashionBox .fashionTxt h2 em {
+.webAppBox .webAppTxt h2 em {
   font-style: normal;
   color: #54aeb7;
 }
-.fashionBox .fashionTxt p {
+.webAppBox .webAppTxt p {
   margin: 15px 0;
   font-weight: 400;
 }
-.fashionBox .fashionTxt a {
+.webAppBox .webAppTxt a {
   display: inline-block;
   padding: 10px 40px;
   border: 1px solid #54aeb7;
   color: #54aeb7;
   transition: all 0.4s;
 }
-.fashionBox .fashionTxt a:hover {
+.webAppBox .webAppTxt a:hover {
   color: #fff;
   background: #54aeb7;
 }
 
-.fashionBox > div {
+.webAppBox > div {
   width: 25%;
   padding: 10px;
 }
-.fashionBox > div > div {
+.webAppBox > div > div {
   padding: 10px;
   border: 1px solid #54aeb7;
   text-align: center;
 }
-.fashionBox > div > div > img {
+.webAppBox > div > div > img {
   width: 100%;
 }
 
-.fashionBox > div > div > h2 {
+.webAppBox > div > div > h2 {
   color: #54aeb7;
   font-weight: 600;
   padding: 5px 0;
   font-size: 20px;
 }
 
-.fashionBox > div > div > em {
+.webAppBox > div > div > em {
   color: #838383;
   font-style: normal;
 }
 
-.fashionBox > div > div > a {
+.webAppBox > div > div > a {
   display: block;
   width: 100%;
   height: auto;
@@ -603,7 +603,7 @@ button.commonBtn {
   transition: all 0.4s;
 }
 
-.fashionBox > div > div > a:hover {
+.webAppBox > div > div > a:hover {
   color: #fff;
   background: #54aeb7;
 }

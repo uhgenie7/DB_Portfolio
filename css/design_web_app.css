@@ -308,7 +308,7 @@ design detail page style
   width: 40%;
   height: auto;
   overflow: hidden;
-  /* background: url(/gold/img/new-arrival-1.jpg) no-repeat center center;
+  /* background: url(/db-portfolio/img/new-arrival-1.jpg) no-repeat center center;
   background-size: cover; */
 }
 
@@ -529,7 +529,7 @@ app detail page style
   height: 30px;
   top: 0;
   left: 0;
-  background: url(/gold/img/frame_top.png) no-repeat top center;
+  background: url(/db-portfolio/img/frame_top.png) no-repeat top center;
   background-size: cover;
 }
 
@@ -538,7 +538,7 @@ app detail page style
   height: 100%;
   top: 0;
   left: 0;
-  background: url(/gold/img/frame_left.png) no-repeat left center;
+  background: url(/db-portfolio/img/frame_left.png) no-repeat left center;
   background-size: cover;
 }
 
@@ -547,7 +547,7 @@ app detail page style
   height: 100%;
   top: 0;
   right: 0;
-  background: url(/gold/img/frame_right.png) no-repeat right center;
+  background: url(/db-portfolio/img/frame_right.png) no-repeat right center;
   background-size: cover;
 }
 
@@ -556,7 +556,7 @@ app detail page style
   height: 30px;
   bottom: 0;
   right: 0;
-  background: url(/gold/img/frame_bottom.png) no-repeat bottom center;
+  background: url(/db-portfolio/img/frame_bottom.png) no-repeat bottom center;
   background-size: cover;
 }
 

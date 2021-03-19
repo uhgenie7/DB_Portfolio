@@ -84,29 +84,29 @@
     letter-spacing: 2px;
   }
 
-  .fashionBox {
+  .webAppBox {
     padding: 25px 0;
   }
-  .fashionBox .fashionTxt h2 {
+  .webAppBox .webAppTxt h2 {
     margin-bottom: 10px;
     font-size: 20px;
   }
-  .fashionBox .fashionTxt p {
+  .webAppBox .webAppTxt p {
     display: none;
   }
-  .fashionBox .fashionTxt a {
+  .webAppBox .webAppTxt a {
     padding: 8px 25px;
     font-size: 12px;
   }
 
-  .fashionBox > div > div > h2 {
+  .webAppBox > div > div > h2 {
     font-size: 16px;
     padding: 5px 0 0 0;
   }
-  .fashionBox > div > div > em {
+  .webAppBox > div > div > em {
     font-size: 12px;
   }
-  .fashionBox > div > div > a {
+  .webAppBox > div > div > a {
     font-size: 12px;
     margin-top: 5px;
   }
@@ -284,16 +284,16 @@
     margin: auto;
   }
 
-  .fashionBox {
+  .webAppBox {
     flex-wrap: wrap;
   }
-  .fashionBox > div {
+  .webAppBox > div {
     width: 50%;
   }
-  .fashionBox .fashionTxt h2 {
+  .webAppBox .webAppTxt h2 {
     margin-bottom: 0;
   }
-  .fashionBox .fashionTxt p {
+  .webAppBox .webAppTxt p {
     display: block;
   }
 
@@ -881,23 +881,23 @@
     flex-wrap: wrap;
   }
 
-  .fashionBox {
+  .webAppBox {
     padding: 20px 0;
   }
-  .fashionBox .fashionTxt h2 {
+  .webAppBox .webAppTxt h2 {
     margin-bottom: 10px;
   }
-  .fashionBox .fashionTxt p {
+  .webAppBox .webAppTxt p {
     display: none;
   }
-  .fashionBox > div > div {
+  .webAppBox > div > div {
     padding: 5px;
   }
-  .fashionBox .fashionTxt a {
+  .webAppBox .webAppTxt a {
     padding: 6px 20px;
   }
 
-  .fashionBox > div > div > em {
+  .webAppBox > div > div > em {
     display: none;
   }
 
