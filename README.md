@@ -8,7 +8,11 @@
 <h1 align='middle'>
   <a href='http://uhj1993.dothome.co.kr/db-portfolio/'>🏠DB PORTFOLIO</a>
 </h1>
-
+<p align="center">
+  <img src="https://img.shields.io/badge/PHP-323330?style=flat-square&logo=PHP&logoColor=777BB4" height="24" />
+  <img src="https://img.shields.io/badge/CSS3-323330?style=flat-square&logo=CSS3&logoColor=1572B6" height="24" />
+  <img src="https://img.shields.io/badge/Javascript-323330?style=flat-square&logo=JavaScript&logoColor=f0db4f" height="24" />
+</p>
 <p align='middle'>
   <strong>DB_Portfolio</strong>는 MariaDB 데이터베이스 관리 시스템과 연결하여 VSCode를 열어 수정할 필요 없이 포트폴리오를 게시하고 관리할 수 있는 사이트입니다.
 </p>
