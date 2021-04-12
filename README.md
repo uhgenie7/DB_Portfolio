@@ -19,7 +19,7 @@
 
 ## 사이트
 
-http://uhj1993.dothome.co.kr/db-portfolio/
+http://devuhj.com/db-portfolio/
 
 ## 주요 특징
 - 회원가입, 로그인, 로그아웃 기능 
